@@ -1,0 +1,6 @@
+@task04UserManagement_HostAddress = http://localhost:5102
+
+GET {{task04UserManagement_HostAddress}}/weatherforecast/
+Accept: application/json
+
+###
