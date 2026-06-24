@@ -30,6 +30,25 @@ Built as per iTransition Task #04 requirements.
 
 1. Clone the repository
 2. Update connection string in `appsettings.json`
-3. Run migrations:
-   ```bash
-   dotnet ef database update
+3. Run migrations: dotnet ef database update
+4. Run backend: dotnet run
+5. Run frontend (ClientApp folder):
+   npm install
+   npm run dev
+
+## Deployment
+**- Backend:** Render Web Service (Docker)
+**- Frontend:** Render Static Site
+**- Database:** Render PostgreSQL
+
+# Screenshots
+(Add screenshots here)
+
+# Video Demonstration:
+[Add Youtube Video URL here]
+
+# Lessons Learned
+- Proper connection string management for PostgreSQL
+- Migration handling when switching from SQL Server
+- Frontend-backend communication using environment variables
+- Importance of testing with Postman before UI integration
