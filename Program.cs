@@ -51,17 +51,15 @@ builder.Services.AddSwaggerGen();
 
 var app = builder.Build();
 
-if (app.Environment.IsDevelopment())
-{
-    app.UseSwagger();
-    app.UseSwaggerUI();
-}
+app.UseSwagger();
+app.UseSwaggerUI();
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
 app.UseCors("AllowAll");
 app.UseAuthorization();
 app.UseMiddleware<BlockedUserMiddleware>();
+
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
