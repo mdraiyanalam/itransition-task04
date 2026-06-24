@@ -1,61 +1,35 @@
 # Task #04 - User Management System
 
 ## Overview
-Full-stack user management application with registration, login, and admin features.
+Full-stack **User Management Web Application** with registration, authentication, and admin panel.  
+Built as per iTransition Task #04 requirements.
 
 ## Tech Stack
-- Backend: ASP.NET Core 8 + EF Core + PostgreSQL
-- Frontend: React + Vite + TypeScript
-- Authentication: JWT
-- Deployment: Render.com
+- **Backend**: ASP.NET Core 8 + EF Core + PostgreSQL
+- **Frontend**: React + Vite + TypeScript + Bootstrap
+- **Authentication**: JWT
+- **Database**: PostgreSQL (Render)
+- **Deployment**: Render.com
 
 ## Features Implemented
 - User Registration & Login
-- Email verification (basic)
-- User management (Block/Unblock/Delete)
-- Blocked user middleware
-- Responsive React dashboard with checkboxes
+- Email verification (basic link)
+- User Management (Block, Unblock, Delete, Delete Unverified)
+- Protected routes with JWT
+- Blocked user middleware (Requirement 5)
+- Unique index on Email in database
+- Responsive dashboard with checkboxes & toolbar
+- Multiple selection + Select All
+- Table sorted by Last Login Time
 
 ## API Documentation
-- Swagger UI: [Link to Swagger]
+- Swagger UI: [https://itransition-task04-backendwebservices.onrender.com/swagger](https://itransition-task04-backendwebservices.onrender.com/swagger)
+- Postman Collection: Available in repository
 
 ## How to Run Locally
-1. Clone the repo
-2. Update connection string
-3. Run migrations
-4. Run backend and frontend
 
-## Deployment
-- Backend: Render Web Service
-- Frontend: Render Static Site
-- Database: Render PostgreSQL
-
-## Screenshots
-(Attach images)
-
-## Video Demonstration
-[Link to video]
-
-## Below are left:
-2. API Documentation
-
-Use Swagger (already enabled)
-Export Postman collection as JSON
-
-3. Architecture Diagram
-
-Use Draw.io to create:
-High-level architecture
-Database schema
-Flow of registration/login
-
-
-4. Final Report (Word/PDF)
-Include:
-
-Project overview
-Requirements vs Implementation table
-Challenges faced & solutions
-Screenshots
-Deployment links
-Lessons learned
+1. Clone the repository
+2. Update connection string in `appsettings.json`
+3. Run migrations:
+   ```bash
+   dotnet ef database update
