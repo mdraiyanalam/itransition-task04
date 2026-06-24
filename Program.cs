@@ -1,6 +1,5 @@
 ﻿using Microsoft.AspNetCore.Authentication.JwtBearer;
 using Microsoft.EntityFrameworkCore;
-using Microsoft.Extensions.Options;
 using Microsoft.IdentityModel.Tokens;
 using System.Text;
 using task04UserManagement.Data;
@@ -14,7 +13,13 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddDbContext<AppDbContext>(options =>
     options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
-// CORS Policy
+// CORS must come before Authorization
+/*
+    CORS (Cross-Origin Resource Sharing) is a browser security mechanism that allows a server 
+    to tell your web browser which websites are allowed to access its data.
+    It acts as a safety barrier to prevent malicious sites from reading sensitive information
+    from other APIs or domains without permission.
+ */
 builder.Services.AddCors(options =>
 {
     options.AddPolicy("AllowAll", builder =>
@@ -36,7 +41,7 @@ builder.Services.AddAuthentication(JwtBearerDefaults.AuthenticationScheme)
             ValidIssuer = builder.Configuration["Jwt:Issuer"],
             ValidAudience = builder.Configuration["Jwt:Audience"],
             IssuerSigningKey = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
-                builder.Configuration["Jwt:Key"] ?? "ThisIsMySuperSecretKeyForTask04UserManagement2026MakeItAtLeast32CharsLong"))
+                builder.Configuration["Jwt:Key"] ?? "9876543210abcdef9876543210abcdef"))
         };
     });
 
@@ -54,27 +59,9 @@ if (app.Environment.IsDevelopment())
 
 app.UseHttpsRedirection();
 app.UseStaticFiles();
-
-// CORS must come before Authorization
-/*
-    CORS (Cross-Origin Resource Sharing) is a browser security mechanism that allows a server 
-    to tell your web browser which websites are allowed to access its data.
-    It acts as a safety barrier to prevent malicious sites from reading sensitive information
-    from other APIs or domains without permission.
- */
-builder.Services.AddCors(options =>
-{
-    options.AddPolicy("AllowAll", builder =>
-        builder.AllowAnyOrigin()
-               .AllowAnyMethod()
-               .AllowAnyHeader());
-});
-
+app.UseCors("AllowAll");
 app.UseAuthorization();
-
-// Blocked User Middleware
 app.UseMiddleware<BlockedUserMiddleware>();
-
 app.MapControllers();
 app.MapFallbackToFile("index.html");
 
