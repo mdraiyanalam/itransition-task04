@@ -23,7 +23,6 @@ RUN dotnet publish "task04UserManagement.csproj" -c Release -o /app/publish
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS final
 WORKDIR /app
 COPY --from=publish /app/publish .
-# Copy React build files to wwwroot
 COPY --from=frontend-build /src/ClientApp/dist ./wwwroot
 
 EXPOSE 8080
