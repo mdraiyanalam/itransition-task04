@@ -1,14 +1,21 @@
-﻿# Stage 1: Build React Frontend (Node 20+)
+﻿# Stage 1: Build React Frontend
 FROM node:20 AS frontend-build
 WORKDIR /src/ClientApp
 COPY ClientApp/package*.json ./
-RUN npm install
+RUN npm ci --only=production
 COPY ClientApp/ ./
 RUN npm run build
 
-# Stage 2: Build .NET Backend
+# Stage 2: Build .NET Backend with Node.js
 FROM mcr.microsoft.com/dotnet/sdk:8.0 AS build
 WORKDIR /src
+
+# Install Node.js 20 (lighter way)
+RUN apt-get update && apt-get install -y curl \
+    && curl -fsSL https://deb.nodesource.com/setup_20.x | bash - \
+    && apt-get install -y nodejs \
+    && rm -rf /var/lib/apt/lists/*
+
 COPY ["task04UserManagement.csproj", "."]
 RUN dotnet restore "task04UserManagement.csproj"
 COPY . .
