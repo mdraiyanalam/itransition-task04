@@ -21,7 +21,7 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
     const fetchUsers = async () => {
         try {
             setLoading(true);
-            const response = await axios.get('https://localhost:7124/api/users', {
+            const response = await axios.get('https://itransition-task04-backendwebservices.onrender.com/api/users', {
                 headers: { Authorization: `Bearer ${token}` }
             });
             setUsers(response.data);
@@ -55,15 +55,15 @@ const Dashboard = ({ onLogout }: { onLogout: () => void }) => {
             else if (action === 'delete') url = '/api/users/delete';
             else if (action === 'delete-unverified') url = '/api/users/delete-unverified';
 
-            await axios.post(`https://localhost:7124${url}`, selectedIds, {
+            await axios.post(`https://itransition-task04-backendwebservices.onrender.com${url}`, selectedIds, {
                 headers: { Authorization: `Bearer ${token}` }
             });
 
             setMessage({ text: `Users ${action}ed successfully`, type: 'success' });
             setSelectedIds([]);
             fetchUsers();
-        } catch (err) {
-            setMessage({ text: 'Action failed', type: 'danger' });
+        } catch (err: any) {
+            setMessage({ text: 'Action failed: ' + (err.response?.data || err.message), type: 'danger' });
         } finally {
             setActionLoading(false);
         }

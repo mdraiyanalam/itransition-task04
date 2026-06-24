@@ -18,7 +18,7 @@ const Register = () => {
         setSuccess('');
 
         try {
-            await axios.post('https://localhost:7124/api/auth/register', {
+            await axios.post('https://itransition-task04-backendwebservices.onrender.com/api/auth/register', {
                 name,
                 email,
                 password

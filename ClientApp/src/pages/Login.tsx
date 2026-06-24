@@ -19,7 +19,7 @@ const Login = ({ onLogin }: LoginProps) => {
         setError('');
 
         try {
-            const response = await axios.post('https://localhost:7124/api/auth/login', {
+            const response = await axios.post('https://itransition-task04-backendwebservices.onrender.com/api/auth/login', {
                 email,
                 password
             });
