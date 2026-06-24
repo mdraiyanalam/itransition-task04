@@ -11,7 +11,8 @@ var builder = WebApplication.CreateBuilder(args);
 // DbContext
 //builder.Services.AddDbContext<AppDbContext>(options =>
 //    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection")));
-builder.Services.AddDbContext<AppDbContext>(options =>options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
+builder.Services.AddDbContext<AppDbContext>(options =>
+    options.UseNpgsql(builder.Configuration.GetConnectionString("DefaultConnection")));
 
 // CORS Policy
 builder.Services.AddCors(options =>
@@ -61,7 +62,13 @@ app.UseStaticFiles();
     It acts as a safety barrier to prevent malicious sites from reading sensitive information
     from other APIs or domains without permission.
  */
-app.UseCors("AllowAll");
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("AllowAll", builder =>
+        builder.AllowAnyOrigin()
+               .AllowAnyMethod()
+               .AllowAnyHeader());
+});
 
 app.UseAuthorization();
 
