@@ -4,6 +4,12 @@
 		<Nullable>enable</Nullable>
 		<ImplicitUsings>enable</ImplicitUsings>
 	</PropertyGroup>
+	<ItemGroup>
+	  <Compile Remove="Models\Data\**" />
+	  <Content Remove="Models\Data\**" />
+	  <EmbeddedResource Remove="Models\Data\**" />
+	  <None Remove="Models\Data\**" />
+	</ItemGroup>
 
 	<ItemGroup>
 		<PackageReference Include="BCrypt.Net-Next" Version="4.2.0" />
@@ -20,10 +26,6 @@
 		</PackageReference>
 		<PackageReference Include="Npgsql.EntityFrameworkCore.PostgreSQL" Version="8.0.10" />
 		<PackageReference Include="Swashbuckle.AspNetCore" Version="6.6.2" />
-	</ItemGroup>
-
-	<ItemGroup>
-		<Folder Include="Models\Data\" />
 	</ItemGroup>
 
 </Project>

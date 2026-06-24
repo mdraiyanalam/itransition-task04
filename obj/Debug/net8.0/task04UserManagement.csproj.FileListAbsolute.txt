@@ -46,6 +46,8 @@ C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04U
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Microsoft.SqlServer.Server.dll
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Microsoft.Win32.SystemEvents.dll
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Mono.TextTemplating.dll
+C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Npgsql.dll
+C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Npgsql.EntityFrameworkCore.PostgreSQL.dll
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Swashbuckle.AspNetCore.Swagger.dll
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerGen.dll
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\bin\Debug\net8.0\Swashbuckle.AspNetCore.SwaggerUI.dll
@@ -135,6 +137,7 @@ C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04U
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\task04UserManagement.csproj.CoreCompileInputs.cache
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\task04UserManagement.MvcApplicationPartsAssemblyInfo.cs
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\task04UserManagement.MvcApplicationPartsAssemblyInfo.cache
+C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\task04UserManagement.sourcelink.json
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\rjimswa.dswa.cache.json
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\rjsmrazor.dswa.cache.json
 C:\Users\mdraiyanalam\Desktop\Organize\iTransition\task04user_management\task04UserManagement\obj\Debug\net8.0\rjsmcshtml.dswa.cache.json
