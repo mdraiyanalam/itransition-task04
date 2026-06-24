@@ -1,6 +1,6 @@
 {
   "version": 2,
-  "dgSpecHash": "yDoWjdmhSZY=",
+  "dgSpecHash": "av/NvG2td+U=",
   "success": true,
   "projectFilePath": "C:\\Users\\mdraiyanalam\\Desktop\\Organize\\iTransition\\task04user_management\\task04UserManagement\\task04UserManagement.csproj",
   "expectedPackageFiles": [
@@ -45,7 +45,6 @@
     "C:\\Users\\mdraiyanalam\\.nuget\\packages\\microsoft.identitymodel.tokens\\7.1.2\\microsoft.identitymodel.tokens.7.1.2.nupkg.sha512",
     "C:\\Users\\mdraiyanalam\\.nuget\\packages\\microsoft.openapi\\1.6.14\\microsoft.openapi.1.6.14.nupkg.sha512",
     "C:\\Users\\mdraiyanalam\\.nuget\\packages\\microsoft.sqlserver.server\\1.0.0\\microsoft.sqlserver.server.1.0.0.nupkg.sha512",
-    "C:\\Users\\mdraiyanalam\\.nuget\\packages\\microsoft.typescript.msbuild\\6.0.3\\microsoft.typescript.msbuild.6.0.3.nupkg.sha512",
     "C:\\Users\\mdraiyanalam\\.nuget\\packages\\microsoft.win32.systemevents\\6.0.0\\microsoft.win32.systemevents.6.0.0.nupkg.sha512",
     "C:\\Users\\mdraiyanalam\\.nuget\\packages\\mono.texttemplating\\2.2.1\\mono.texttemplating.2.2.1.nupkg.sha512",
     "C:\\Users\\mdraiyanalam\\.nuget\\packages\\npgsql\\8.0.5\\npgsql.8.0.5.nupkg.sha512",
