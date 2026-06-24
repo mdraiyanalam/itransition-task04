@@ -1,5 +1,5 @@
-﻿# Stage 1: Build React Frontend
-FROM node:18 AS frontend-build
+﻿# Stage 1: Build React Frontend (Node 20+)
+FROM node:20 AS frontend-build
 WORKDIR /src/ClientApp
 COPY ClientApp/package*.json ./
 RUN npm install
