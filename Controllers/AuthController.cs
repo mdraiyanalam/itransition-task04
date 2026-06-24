@@ -42,8 +42,7 @@ namespace task04UserManagement.Controllers
             _context.Users.Add(user);
             await _context.SaveChangesAsync();
 
-            // TODO: Send email with verification link later
-            return Ok(new { message = "User registered successfully. Please check your email to verify." });
+            return Ok(new { message = "User registered successfully." });
         }
 
         [HttpPost("login")]
@@ -76,6 +75,20 @@ namespace task04UserManagement.Controllers
             return BadRequest("Invalid link");
         }
 
+        [HttpGet("test-db")]
+        public async Task<IActionResult> TestDb()
+        {
+            try
+            {
+                var count = await _context.Users.CountAsync();
+                return Ok(new { message = "Database connected successfully", userCount = count });
+            }
+            catch (Exception ex)
+            {
+                return BadRequest("Database connection failed: " + ex.Message);
+            }
+        }
+
         private string GenerateJwtToken(User user)
         {
             var claims = new[]
@@ -85,7 +98,9 @@ namespace task04UserManagement.Controllers
                 new Claim("Status", user.Status)
             };
 
-            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(_config["Jwt:Key"] ?? "ThisIsMySuperSecretKeyForTask04UserManagement2026"));
+            var key = new SymmetricSecurityKey(Encoding.UTF8.GetBytes(
+                _config["Jwt:Key"] ?? "9876543210abcdef9876543210abcdef"));
+
             var creds = new SigningCredentials(key, SecurityAlgorithms.HmacSha256);
 
             var token = new JwtSecurityToken(

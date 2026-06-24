@@ -8,7 +8,7 @@ namespace task04UserManagement.Controllers
 {
     [Route("api/users")]
     [ApiController]
-    [Authorize]   // Protected - only authenticated users
+    [Authorize]
     public class UsersController : ControllerBase
     {
         private readonly AppDbContext _context;

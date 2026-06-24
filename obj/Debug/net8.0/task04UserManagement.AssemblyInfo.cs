@@ -14,7 +14,7 @@ using System.Reflection;
 [assembly: System.Reflection.AssemblyCompanyAttribute("task04UserManagement")]
 [assembly: System.Reflection.AssemblyConfigurationAttribute("Debug")]
 [assembly: System.Reflection.AssemblyFileVersionAttribute("1.0.0.0")]
-[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+d5e78dea42ae84671033e0ebd79e0bb8c3b00e54")]
+[assembly: System.Reflection.AssemblyInformationalVersionAttribute("1.0.0+520fc41afc34c8808a2258ca40207aeb77136156")]
 [assembly: System.Reflection.AssemblyProductAttribute("task04UserManagement")]
 [assembly: System.Reflection.AssemblyTitleAttribute("task04UserManagement")]
 [assembly: System.Reflection.AssemblyVersionAttribute("1.0.0.0")]
